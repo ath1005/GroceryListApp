@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from .views import GroceryItemViewSet
+from .views import *
 from django.http import JsonResponse
 from django.urls import path
 
@@ -8,6 +8,9 @@ def healthcheck_view(request):
 
 router = DefaultRouter()
 router.register(r'grocery-items', GroceryItemViewSet)
+router.register(r'list', ListViewSet)
+router.register(r'shared-list', SharedListViewSet)
+router.register(r'user', UserViewSet)
 
 
 urlpatterns = router.urls
