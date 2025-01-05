@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import GroceryItem
+from .serializers import GroceryItemSerializer
 
-# Create your views here.
+class GroceryItemViewSet(ModelViewSet):
+    queryset = GroceryItem.objects.all()
+    serializer_class = GroceryItemSerializer

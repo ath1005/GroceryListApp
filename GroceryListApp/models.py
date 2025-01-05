@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class GroceryItem(models.Model):
+    name = models.CharField(max_length=255)
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return self.name
